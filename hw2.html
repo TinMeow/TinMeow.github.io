@@ -4,19 +4,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homework2</title>
 </head>
 <body>
+
+<div class=row> 
+    <span id="1">xy</span>
+    <span id="2">12</span>
+        <span id="3">89</span>
+    </div> 
+
+<p><button onClick="setcolor()">magic button</button></p>
+
+
+<script>
+var i=1;
+    function setcolor(){
+        i++;
+        if (i%2==0){
+            document.getElementById('1').style.color='red' 
+            document.getElementById('1').style.fontstyle="times new roman"
+            document.getElementById('1').style.fontWeight="bold"
+
+            document.getElementById('2').style.color='blue'
+            document.getElementById('2').style.fontFamily='Arial'
+            document.getElementById('2').style.fontFamily='impact'
+
+            document.getElementById('3').style.color='green' 
+            document.getElementById('3').style.fontStyle="italic"
+        }else{
+            document.getElementById('1').style.color='black'
+            document.getElementById('1').style.fontstyle="times new roman"
+            document.getElementById('1').style.fontWeight="normal"
+
+            document.getElementById('2').style.color='black'
+            document.getElementById('2').style.fontFamily="times new roman"
+            document.getElementById('2').style.fontFamily="normal"
+
+            document.getElementById('3').style.color='black'
+            document.getElementById('3').style.fontstyle="times new roman"
+            document.getElementById('3').style.fontStyle="normal"
+
+        }
+    }
+   
+</script>
+ 
+<div>
+    <header>Calculate Three Number</header>
+    <from action="number">
+        <input id="num1" type="number" placeholder="enter a number">
+        <input id="num2" type="number" placeholder="enter a number">
+        <input id="num3" type="number" placeholder="enter a number">
+    </from>
+
+
+
+
+    <p><button onClick="calculate()">Calculate</button></p>
+    <p><button onClick="res()">reset</button></p>
+
     
-Homework 2 Coming Soon
+    <script>
+        function calculate() {
+            number1 = document.getElementById("num1").value;
+            number2 = document.getElementById("num2").value;
+            number3 = document.getElementById("num3").value;
+
+            
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            
+            
+            var number1,number2,number3,sum,average,
+            min=Math.min(number1,number2,number3),
+            max=Math.max(number1,number2,number3);
+
+            sum = n1+n2+n3;
+            average = (sum/3)
+            
+        
+
+            document.getElementById("results").innerHTML = ("The Sum is " + sum
+            + "<br>Average is  " +  average
+            + "<br>maximum number is  " +  max
+            + "<br>minimum number is  " +  min
+            );
+        }
+
+
+
+
+
+        function res()
+        {
+            document.getElementById("results").innerHTML = "";
+        }
+
+        
+     
+     </script>
+
+
+<span style="font-size: 2em; color: red">Results:</span><br><br>
+
+
+<div id="results"></div>
+
+</div>
+
+
+<br>
 <br>
 <br>
 <button><a href="htmlframe-1.html"> Go back button </a></button>
-
-
-
-
-
-
 </body>
 </html>
