@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4 Extra Credit</title>
+</head>
+<body>
+
+    <from action="number">
+        <input id="num1" type="number" placeholder="enter a number 2-9">
+        
+    </from>
+
+
+    <p><button onClick="HollowRec()">setNum</button></p>
+
+    <script>
+
+   
+      function HollowRec(n){
+
+        number1 = document.getElementById("num1").value;
+        n = parseInt(number1);
+        
+          for(var i=1; i <=n; i++){
+              for(var j=1; j <=n;j++){
+                  if(i==1||i==n){
+                      document.writeln('*');
+                  } else if(j==1||j==n){
+                      document.writeln('*');
+                  } else {
+                      document.writeln('&#160'+'&#160');
+                  }
+              }
+              document.writeln('<br/>')
+          }
+      }
+      
+
+
+
+        
+
+
+function res()
+        {
+            document.getElementById("results").innerHTML = "";
+        }
+
+
+</script>
+    
+<button><a href="hw4.html"> Go back button </a></button>
+
+    
+</body>
+</html>
