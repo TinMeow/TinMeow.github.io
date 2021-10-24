@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw3 part3</title>
+</head>
+<body>
+
+    <div>
+
+    <from action="number">
+        <h1>Convert Temperature</h1>
+            
+            <input id="num1" type="number" placeholder="Enter a Number"  >
+    </from>
+
+    
+    <p><button onClick="calculate1()">Celsius to Fahrenheit</button> </p>
+    <p><button onClick="calculate2()">Fahrenheit to Celsius</button> </p>
+
+
+
+    <script>
+        function calculate1() {
+            
+            var v1=document.getElementById("num1").defaultValue="0";
+       var v1=document.getElementById("num1").value;
+       var i1=parseInt(v1);
+       f1=(v1*9/5) + 32;
+
+       document.getElementById("ctof").innerHTML = (i1.toFixed(0) +"°C = " + f1.toFixed(0) + "°F");
+    };
+
+    function calculate2() {
+            
+            var v1=document.getElementById("num1").defaultValue="0";
+       var v1=document.getElementById("num1").value;
+       var i1=parseInt(v1);
+       c1=(v1-32)*5/9;
+
+
+       document.getElementById("ctof").innerHTML = (i1.toFixed(0) + "°F = " + c1.toFixed(0) + "°C");
+    };
+     </script>
+
+<span style="font-size: 2em; color: red">Results:</span><br><br>
+
+<span id="ftoc"> </span>
+<span id="ctof"> </span> 
+
+</div>
+
+
+<div>
+<from action="number">
+    <h1>Convert Temperature Version 2</h1>
+        
+        <span><input id="num2" type="number" >°F  = 
+
+        <input id="num3" type="number" > °C </span> 
+
+</from>
+
+
+
+
+<script type="text/javascript">
+
+    var f3 =document.getElementById("num2")
+    var f4 =document.getElementById("num3")
+
+    
+
+f3.onkeyup=function(){f4.value = +(f3.value-32)*5/9;}
+f4.onkeyup=function(){f3.value= +(f4.value*9/5) + 32;}
+
+ </script>
+
+
+
+
+
+
+</div>
+
+
+<br>
+<br>
+<button><a href="hw3.html"> Go back button </a></button>
+
+
+
+
+
+
+</body>
+</html>

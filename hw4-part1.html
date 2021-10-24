@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4 Part 1</title>
+</head>
+<body>
+
+<h1>Homework 4 Part 1</h1>
+
+
+    <script>
+        var sum=0;
+        var product=1;
+        var fn;
+
+        for(var j=5;j<=25;j+=4){
+
+            sum+=j;
+            product*=j;
+           
+            document.write(j+",");
+        }
+        fn = product.toLocaleString();
+
+        document.write("<br>"+"<br>"+"Sum of every fourth integer from 5-25 is: "+sum)
+        document.write("<br>"+"<br>"+"Product of every fourth integer from 5-25 is: "+fn)
+
+
+    </script>
+
+    <h1>
+
+    </h1>
+<br>
+
+<br>
+    <script>
+       var sum=0;
+       var product=1;
+       var fn;
+       
+       var i=0;
+       while(i<18){ //since i will become equal to 18 before the while condition exits!!!
+           document.write(i+",");
+
+           i=3+i;
+           sum=i+sum;
+            product=product*i;
+       }
+ fn = product.toLocaleString();
+       document.write("<br>"+"<br>"+"Sum of every third integer from 3-18 is: "+sum)
+        document.write("<br>"+"<br>"+"Product of every third integer from 3-18 is: "+fn)
+        
+
+    </script>
+
+
+
+<br>
+<br>
+<button><a href="hw4.html"> Go back button </a></button>
+
+
+
+
+  
+</body>
+</html>

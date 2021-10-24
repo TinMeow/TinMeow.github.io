@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw3 part2</title>
+</head>
+<body>
+    
+    
+    <br>
+    <br>
+    
+    
+    
+    <div>
+
+
+
+
+        <header style="font-size: 1.5em">Input the number of items sold for each item number: </header>
+        <from action="number">
+            <ul>
+            <li> <h5>Item 1: <input id="num1" type="number" placeholder="Number of Item 1 Sold" onkeyup="javascript:showdata1(this)"></h5></li>
+            <li><h5>Item 2: <input id="num2" type="number" placeholder="Number of Item 2 Sold" onkeyup="javascript:showdata2(this)"></h5></li>
+            <li><h5>Item 3:  <input id="num3" type="number" placeholder="Number of Item 3 Sold" onkeyup="javascript:showdata3(this)"></h5></li>
+           <li> <h5>Item 4: <input id="num4" type="number" placeholder="Number of Item 4 Sold"  onkeyup="javascript:showdata4(this)"></h5></li>
+            </ul>
+        </from>
+    
+    
+    
+    
+    <div id="this" style="font-size: 1.5em; color: red"></div>
+    
+    
+        <p><button onClick="calculate()">Calculate</button>
+        <button onClick="res()">reset</button></p>
+    
+        
+        <script>
+            function calculate() {
+                
+                var v1=document.getElementById("num1").defaultValue="0";
+                var v2=document.getElementById("num2").defaultValue="0";
+                var v3=document.getElementById("num3").defaultValue="0";
+                var v4=document.getElementById("num4").defaultValue="0";
+    
+           var v1=document.getElementById("num1").value;
+           var v2=document.getElementById("num2").value;
+           var v3=document.getElementById("num3").value;
+           var v4=document.getElementById("num4").value;
+           var i1=parseInt(v1);
+           var i2=parseInt(v2);
+           var i3=parseInt(v3);
+           var i4=parseInt(v4);
+
+           var NumS1,NumS2,NumS3,NumS4,ttsold;
+            NumS1=v1*20.99;
+            NumS2=v2*12.75;
+            NumS3=v2*9.95;
+            NumS4=v4*35.89;
+            ttsold=v1*20.99+v2*12.75+v2*12.75+v4*35.89;
+            ttearn=ttsold*0.9+250;
+          
+           if(v1<0 || v1>9999999999)
+            {
+                document.getElementById("this").innerHTML = ('Enter a valid number for Item 1');
+            return; }   
+            
+            else if (v2<0 || v2>9999999999){
+            document.getElementById("this").innerHTML = ('Enter a valid number for Item 2');
+            return; }  
+            
+            else if (v3<0 || v3>9999999999){
+            document.getElementById("this").innerHTML = ('Enter a valid number for Item 3');
+            return; } 
+    
+            else if (v4<0 || v4>9999999999){
+            document.getElementById("this").innerHTML = ('Enter a valid number for Item 4');
+            return; }
+        
+        
+        
+        
+        else {  
+            
+            document.getElementById("tt1").innerHTML = ("$ "+  NumS1.toFixed(2));
+            document.getElementById("tt2").innerHTML = ("$ "+  NumS2.toFixed(2));
+            document.getElementById("tt3").innerHTML = ("$ "+  NumS3.toFixed(2));
+            document.getElementById("tt4").innerHTML = ("$ "+  NumS4.toFixed(2));
+
+            document.getElementById("tt5").innerHTML = ("$ "+  ttsold.toFixed(2));
+            document.getElementById("tt6").innerHTML = ("$ "+  ttearn.toFixed(2));
+            }
+
+           
+
+    
+        };
+    
+        
+    
+            function res()
+            {
+                document.getElementById("tt1").innerHTML = "";
+                document.getElementById("tt2").innerHTML = "";
+                document.getElementById("tt3").innerHTML = "";
+                document.getElementById("tt4").innerHTML = "";
+                document.getElementById("tt5").innerHTML = "";
+                document.getElementById("tt6").innerHTML = "";
+            }
+    
+         </script>
+    
+    
+    <span style="font-size: 2em; color: red">Results:</span><br><br>
+    
+    
+    <div id="results"></div>
+
+<script type="text/javascript">
+function showdata1 (inputobj){
+    var obj;
+    obj=document.getElementById("item1");
+    obj.innerHTML =  inputobj.value;
+}
+
+function showdata2 (inputobj){
+    var obj;
+    obj=document.getElementById("item2");
+    obj.innerHTML =   inputobj.value;
+}
+function showdata3 (inputobj){
+    var obj;
+    obj=document.getElementById("item3");
+    obj.innerHTML =   inputobj.value;
+}
+function showdata4 (inputobj){
+    var obj;
+    obj=document.getElementById("item4");
+    obj.innerHTML =  inputobj.value;
+}
+
+
+</script>
+
+    
+    <table width="500px" height="100px">
+        <tr>
+            <td>Item # </td>
+            <td>Price </td>
+            <td>Number Sold </td>
+            <td class="td">Total</td>
+           
+        </tr>
+        <tr>
+            <td> 1</td>
+            <td>$20.99</td>
+            <td id="item1"></td>
+            <td id="tt1" class="td"></td>
+           
+        </tr>
+        <tr>
+            <td> 2</td>
+            <td>$12.75</td>
+            <td id="item2"></td>
+            <td id="tt2" class="td"></td>
+           
+        </tr>
+        <tr>
+            <td> 3</td>
+            <td>$9.95</td>
+            <td id="item3"></td>
+            <td id="tt3" class="td"></td>
+           
+        </tr>
+        <tr>
+            <td> 4</td>
+            <td>$35.89</td>
+            <td id="item4"></td>
+            <td id="tt4" class="td"></td>
+           
+        </tr>
+
+
+
+
+
+    </table>
+    <br>
+
+    <style>
+        .td{width: 120px;overflow:hidden}
+    </style>
+        
+    <table border ="2" width="500px" height="80px" >
+<tr  colspan="3"> 
+    <td> Total Amount Sold: </td>
+    <td class="td" id="tt5" ></td>
+</tr>
+<tr  colspan="3">
+    <td> Total Weekly Earnings: </td>
+    <td class="td" id="tt6"  ></td>
+</tr>
+
+
+    </table>
+    </div>
+    
+    
+
+    <br>
+    <br>
+    <br>
+
+    <button><a href="hw3.html"> Go back button </a></button>
+    
+
+</body>
+</html>

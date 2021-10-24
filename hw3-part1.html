@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw3 part1</title>
+</head>
+<body>
+    
+<br>
+<br>
+
+
+
+<div>
+    <header style="font-size: 2em">Calculate Fianl Score</header>
+    <from action="number">
+        <ul>
+        <h5>Homework Average <li> <input id="num1" type="number" placeholder="Homework Average"  ></h5></li>
+        <h5>Mid-term Exam  <li><input id="num2" type="number" placeholder="Mid-term Exam"  ></h5></li>
+        <h5>Final Exam Score <li> <input id="num3" type="number" placeholder="Final Exam Score"  ></h5></li>
+       <h5>Participation  <li> <input id="num4" type="number" placeholder="Participation"  ></h5></li>
+        </ul>
+    </from>
+
+
+
+
+<div id="this" style="font-size: 1.5em; color: red"></div>
+
+
+    <p><button onClick="calculate()">Calculate</button></p>
+    <p><button onClick="res()">reset</button></p>
+
+    
+    <script>
+        function calculate() {
+            
+            var v1=document.getElementById("num1").defaultValue="0";
+            var v2=document.getElementById("num2").defaultValue="0";
+            var v3=document.getElementById("num3").defaultValue="0";
+            var v4=document.getElementById("num4").defaultValue="0";
+
+       var v1=document.getElementById("num1").value;
+       var v2=document.getElementById("num2").value;
+       var v3=document.getElementById("num3").value;
+       var v4=document.getElementById("num4").value;
+       var i1=parseInt(v1);
+       var i2=parseInt(v2);
+       var i3=parseInt(v3);
+       var i4=parseInt(v4);
+      
+       if(v1<0 || v1>100)
+        {
+            document.getElementById("this").innerHTML = ('Homework Average <br>should between 0-100');
+        return; }   
+        
+        else if (v2<0 || v2>100){
+        document.getElementById("this").innerHTML = ('Mid-term Exam Score <br> should between 0-100');
+        return; }  
+        
+        else if (v3<0 || v3>100){
+        document.getElementById("this").innerHTML = ('Final Exam Score <br> should between 0-100');
+        return; } 
+
+        else if (v4<0 || v4>100){
+        document.getElementById("this").innerHTML = ('Participation Score <br> should between 0-100');
+        return; }
+    
+    
+    
+    
+    else {  
+       var final_average;
+       final_average= (0.5 * v1) + (0.2 * v2) + (0.2 * v3) + (0.1 * v4)
+        
+
+        document.getElementById("results").innerHTML = (
+           "Homework Average: "+  i1.toFixed(0) +
+           "<br>Mid-term Exam Score: "+  i2.toFixed(0) +
+           "<br>Final Exam Score: "+  i3.toFixed(0) +
+           "<br>Participation Score: "+  i4.toFixed(0) + 
+          
+        "<br><br>Final Average is: "+ final_average.toFixed(0));
+
+
+        if (final_average<60){ 
+            document.getElementById("grade").innerHTML =("Final Letter Grade is: F.")
+            document.getElementById("fail").innerHTML =("<br>Student must retake the course")
+        }
+        else if( final_average<70) {
+            document.getElementById("fail").innerHTML =("<br>Student must retake the course")
+            document.getElementById("grade").innerHTML =("Final Letter Grade is: D.")
+        }else if( final_average<80) {
+            document.getElementById("grade").innerHTML =("Final Letter Grade is: C.")
+        }else if( final_average<90) {
+            document.getElementById("grade").innerHTML =("Final Letter Grade is: B.")
+        }else {
+            document.getElementById("grade").innerHTML =("Final Letter Grade is: A.")
+        }
+
+        }
+
+    };
+
+    
+
+        function res()
+        {
+            document.getElementById("results").innerHTML = "";
+            document.getElementById("this").innerHTML = "";
+            document.getElementById("grade").innerHTML = "";
+            document.getElementById("fail").innerHTML = "";
+        }
+
+     </script>
+
+
+<span style="font-size: 2em; color: red">Results:</span><br><br>
+
+
+<div id="results"></div>
+<span id="grade"></span>
+<span id="fail" style="font-size: 1.2em; color: red"></span>
+
+
+</div>
+
+
+
+
+<button><a href="hw3.html"> Go back button </a></button>
+
+</body>
+</html>

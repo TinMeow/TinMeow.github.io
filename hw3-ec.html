@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw3 extra credit</title>
+</head>
+<body>
+    <h3>
+        One-digit Multiplication
+    </h3>
+
+
+<script>
+
+function RNum2(){    var arrayname = [0,1,2,3,4,5,6,7,8,9];
+    var num1=Math.floor(Math.random()*arrayname.length);
+    var num2=Math.floor(Math.random()*arrayname.length);
+    document.getElementById("n1").innerHTML = (num1)
+    document.getElementById("n2").innerHTML = (num2)
+
+}
+    
+
+
+
+function RNum1(){       
+ var v1=document.getElementById("input").value;
+    var i1=parseInt(v1);
+    var n1=document.getElementById("n1").innerHTML;
+    
+    var mul1=parseInt(n1);
+
+    var n2=document.getElementById("n2").innerHTML;
+ var mul2=parseInt(n2);
+
+    if(v1==(mul1*mul2)){
+        document.getElementById("n4").innerHTML = ("very good");
+}else{
+    document.getElementById("n4").innerHTML = ("wrong, try again");}
+}
+</script>
+
+<div>
+
+    <table width="500px" height="100px">
+        <tr>
+            <td>------</td>
+            <td>------</td>
+            <td>------</td>
+            <td>------</td>
+           
+        </tr>
+        <tr>
+            <td> <h1 id="n1">   </h1></td>
+            <td> <h2> x  </g2> </td>
+            <td><h1 id="n2"> <td> <h2> = </g2> </td>  </h1></td>
+
+            <td><h1 id="n3"> </h1> <input id="input" type="number" placeholder=" "  > </input></td>
+
+        </tr>
+    </table>
+
+
+    
+    
+    
+
+</div>
+<span id="n4" style="font-size: 1.5em; color: red">  </span>
+    <br>
+    <br>
+
+<button onclick="RNum2()"> Get A Question</button>
+<button onclick="RNum1()"> Check answer</button>
+
+
+
+<br>
+<br>
+
+<button><a href="hw3.html"> Go back button </a></button>
+
+
+
+
+
+
+</body>
+</html>
