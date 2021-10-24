@@ -7,32 +7,65 @@
     <title>Homework 4 Part 2</title>
 </head>
 <body>
-
-    <p id="result"></p>
-
-     <script>
-         
-
-        for(var r=5;r<=7;r++){
-            var rate=r/100;
-            var P=1000;
-
-            for(var n=1;n<=10;n++){
-                
-
-                 var a=P*Math.pow((1+rate),n); 
-                 var fn;
-                 fn = a.toLocaleString(undefined, {maximumFractionDigits: 2});
-
-                 
-               document.write ("<br>"+ " r: "+ r + ", n: "+n + ", P: " + fn);
-              
-
-            }
-            
-        }
-
-    </script>
+        <h1>Calculate Insterest</h1>
+        <script>
+          var body = document.getElementsByTagName('body')[0];
+        
+        
+        for(let rate=5;rate<=7;rate++){
+          //table
+          var ourTable     = document.createElement("table");
+          var ourTableBody = document.createElement("tbody");
+        
+          //crete head
+          var head = document.createElement("tr");
+          var head1=document.createElement("th");
+          var head1text=document.createTextNode("Year");
+          head1.appendChild(head1text);
+          head.appendChild(head1);
+          var head2=document.createElement("th");
+          var head2text=document.createTextNode("Amount");
+          head2.appendChild(head2text);
+          head.appendChild(head2);
+          var head3=document.createElement("th");
+          var head3text=document.createTextNode("Rate");
+          head3.appendChild(head3text);
+          head.appendChild(head3);
+          ourTableBody.appendChild(head);
+        
+            var p=1000;
+            var r=rate/100
+            for(var i=1;i<=10;i++){
+              p=(p*Math.pow((1+r),i));
+              //table body
+              var row = document.createElement("tr");
+              var year = document.createElement("td");
+              var yearText = document.createTextNode(i);
+              year.appendChild(yearText);
+              row.appendChild(year);
+              var amount = document.createElement("td");
+              var amountText = document.createTextNode(p.toFixed(2));
+              amount.appendChild(amountText);
+              row.appendChild(amount);
+              var ratei = document.createElement("td");
+              var rateText = document.createTextNode(rate/100);
+              ratei.appendChild(rateText);
+              row.appendChild(ratei);
+        
+              ourTableBody.appendChild(row);
+        
+          
+            }
+          ourTable.appendChild(ourTableBody);
+          ourTable.setAttribute("border", "2");
+          body.appendChild(ourTable);
+          }
+        
+        
+        
+        
+        
+        </script>
 
 <br>
 <button><a href="hw4.html"> Go back button </a></button>
